@@ -1,0 +1,70 @@
+body{
+	width: 200px;
+	margin: auto;
+	font-family: sans-serif;
+	text-align: center;
+}
+ul, li{
+	padding: 0;
+	margin: 0;
+}
+.slider-wrap{
+	width: 200px;
+	overflow: hidden;
+}
+.slider-wrap ul{
+	width: 10000px;
+	position: relative;
+	-webkit-animation: slide 20s;
+	-webkit-animation-iteration-count: infinite;
+	
+}
+.slider-wrap ul li{
+	float: left;
+	list-style: none;
+	position: relative;
+}
+.slider-wrap ul li img{
+	display: block;
+}
+.slider-wrap ul li h5{
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	padding: 5px;
+	width: 100%;
+	-webkit-animation: heading 20s;
+	-webkit-animation-iteration-count: infinite;
+}
+.slider-wrap ul:hover,
+.slider-wrap ul:hover h5{
+	-webkit-animation-play-state: paused;
+}
+@-webkit-keyframes 'slide' {
+	15%{
+		/* After 2s it still has a default left value of 0, simulating a pause effect */
+		left: 0;
+	}
+	20%,40%{
+		left:-200px;
+	}
+	45%,65%{
+		left: -400px;
+	}
+	70%, 90%{
+		left: -600px;
+	}
+	93%{
+		left: 0;
+	}
+}
+@-webkit-keyframes 'heading'{
+	15%,20%,40%,45%,65%,70%,90%{
+		bottom:0;
+	}
+	18%,43%,68%,93%{
+		bottom:-200px;
+	}
+}
